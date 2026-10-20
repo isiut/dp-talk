@@ -1,42 +1,105 @@
 \documentclass{beamer}
 
-% Direct LaTeX to look inside the "theme" subfolder for .sty files
+\usefonttheme{serif}
+
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{graphics}
+
+% Direct LaTeX to look inside the theme subfolder for .sty files
 \makeatletter
 \def\input@path{{./theme/}}
 \makeatother
 
 \usetheme{metropolis}
 
-\usepackage{tikz}
-
 \title{Covering Families for Complete Bipartite Graphs with DP-Coloring}
 \date{\today}
 \author{Illia Siutkin}
 \institute{Lake Forest College}
 \begin{document}
-  \maketitle
-  
-  \section{Introduction to DP-Coloring}
-  
-  \frame{{Graph Coloring}
-  
-  \vspace{0.3cm}
-  Allocation of colors to the vertices. In a proper coloring, adjacent vertices receive different colors.
-  \vspace{0.5cm}
+\maketitle
 
-  \centering
+\section{Introduction to DP-Coloring}
+\frame{{Graph Coloring}
 
-  \begin{tikzpicture}[scale=1.5]
+    \vspace{0.3cm}
+    Allocation of colors to the vertices. In a proper coloring, adjacent vertices receive different colors.
+    \vspace{0.5cm}
+
+    \centering
+
+    \begin{tikzpicture}[scale=1.5]
         % vertices
         \node[circle, draw, fill = red] (A) at (1,1.5) {A};
         \node[circle, draw, fill = green] (B) at (0,0) {B};
         \node[circle, draw, fill = green] (C) at (2,0) {C};
-    
+
         % edges
         \draw (A) -- (B);
         \draw (A) -- (C);
     \end{tikzpicture}
 
 }
-  
+
+\frame{{Chromatic Number}
+    \textbf{Definition:}
+    $\chi(G)$ = minimum number of colors needed to color the graph properly
+
+    \centering
+
+    \vspace{0.5cm}
+    Here, $\chi(G) = 2$
+
+    \vspace{1cm}
+    \begin{tikzpicture}[scale=1.5]
+        % vertices
+        \node[circle, draw, fill = red] (A) at (1,1.5) {A};
+        \node[circle, draw, fill = green] (B) at (0,0) {B};
+        \node[circle, draw, fill = green] (C) at (2,0) {C};
+
+        % edges
+        \draw (A) -- (B);
+        \draw (A) -- (C);
+    \end{tikzpicture}
+}
+
+\frame{{List Coloring}
+    \centering
+    \begin{tikzpicture}[scale=1.5]
+        % vertices
+        \node[circle, draw, fill=red!] (A) at (1,1.5) {A};
+        \node[circle, draw, fill=green!] (B) at (0,0) {B};
+        \node[circle, draw, fill=green!] (C) at (2,0) {C};
+
+        % Place list of allowed colors
+        \node[circle, draw, inner sep=0pt, minimum size=8pt, fill = red!] (D) at (2.1,1.5) {};
+        \node[circle, draw, inner sep=0pt, minimum size=8pt, fill = blue!] (D) at (1.7,1.5) {};
+        \node[circle, draw, inner sep=0pt, minimum size=8pt, fill = green!] (D) at (-1.2,0) {};
+        \node[circle, draw, inner sep=0pt, minimum size=8pt, fill = red!] (D) at (-0.8, 0) {};
+        \node[circle, draw, inner sep=0pt, minimum size=8pt, fill = blue!] (D) at (2.6,0) {};
+        \node[circle, draw, inner sep=0pt, minimum size=8pt, fill = green!] (D) at (3.0, 0) {};
+
+        % Include Paranthesis and Commas for List colorings
+        \node at (1.55, 1.5) {(};
+        \node at (1.9, 1.4) {,};
+        \node at (2.25, 1.5) {)};
+
+        \node at (-1.35, 0) {(};
+        \node at (-1, -.1) {,};
+        \node at (-0.65, 0) {)};
+
+        \node at (2.45, 0) {(};
+        \node at (2.8, -0.1) {,};
+        \node at (3.15, 0) {)};
+
+        % edges
+        \draw (A) -- (B);
+        \draw (A) -- (C);
+
+    \end{tikzpicture}
+
+}
+
+
 \end{document}
