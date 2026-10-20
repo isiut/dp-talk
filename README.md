@@ -1,0 +1,5 @@
+# Covering Families for Complete Bipartite Graphs with DP-Coloring
+
+### Abstract
+
+DP-coloring is a recent generalization of list coloring, which is itself a generalization of classic graph coloring. In DP-colored graphs, each edge between two vertices is assigned a list of matchings that denote conflicts between members of the vertices’ color lists. We studied the application of this to complete bipartite graphs, or graphs containing two sets of vertices where each vertex in one of the sets has an edge with all vertices in the other set. In particular, we searched for the smallest covering families that block all possible DP-colorings of an ℓ-fold graph with ℓ colors per vertex. In this talk, I will present our findings regarding the DP-chromatic number of complete bipartite graphs, which include an exact value for a 4-fold complete bipartite graph and a general tightening of bounds for larger graphs.
